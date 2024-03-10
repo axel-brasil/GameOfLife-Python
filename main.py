@@ -55,7 +55,7 @@ def printGrid(grid):
     sleep(0.1)
 
 #patterns.random(grid, 500)
-#patterns.Glider(grid)
+patterns.Glider(grid)
 #patterns.Square(grid)
 #patterns.OLine(grid)
 #patterns.Line(grid)
