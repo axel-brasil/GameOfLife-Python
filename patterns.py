@@ -29,9 +29,63 @@ def OLine(grid):
 
 def Cross(grid):
     for i in range(len(grid)):
-        grid[i][i+1] = 1
+        grid[i][i] = 1
     for r,c in enumerate(range(len(grid),0,-1)):
         grid[r][c-1] = 1
+
+def GliderGun(grid):
+    # Square 1
+    grid[7][3] = 1
+    grid[7][4] = 1
+    grid[8][3] = 1
+    grid[8][4] = 1
+    # Gun 1
+    grid[7][13] = 1
+    grid[8][13] = 1
+    grid[9][13] = 1
+
+    grid[10][14] = 1
+    grid[11][15] = 1
+    grid[11][16] = 1
+
+    grid[6][14] = 1
+    grid[5][15] = 1
+    grid[5][16] = 1
+
+    grid[6][18] = 1
+
+    grid[7][19] = 1
+    grid[8][19] = 1
+    grid[9][19] = 1
+    grid[8][20] = 1
+
+    grid[10][18] = 1
+
+    grid[8][17] = 1
+
+    #Gun 2
+    grid[3][27] = 1
+    grid[4][27] = 1
+
+    grid[4][25] = 1
+
+    grid[5][23] = 1
+    grid[5][24] = 1
+    grid[6][23] = 1
+    grid[6][24] = 1
+    grid[7][23] = 1
+    grid[7][24] = 1
+
+    grid[8][25] = 1
+
+    grid[8][27] = 1
+    grid[9][27] = 1
+
+    # Square 2
+    grid[5][37] = 1
+    grid[5][38] = 1
+    grid[6][37] = 1
+    grid[6][38] = 1
 
 def random(grid, n_of_alive):
     from random import randint
