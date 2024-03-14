@@ -101,3 +101,68 @@ def random(grid, n_of_alive):
             if [random_c, random_r] not in existAlredy:
                 grid[random_c][random_r] = 1
             existAlredy.append([random_c, random_r])
+
+def create(grid):
+    from subprocess import call
+    import sys
+    import tty
+
+    call(['clear'])
+    tty.setcbreak(sys.stdin)
+
+    def updateGrid():
+        for i in grid:
+            str_row = ''.join(map(str, i))
+            nice_row = str_row.replace('0', '⬜')\
+                              .replace('1', '⬛')\
+                              .replace('2', '🟩')
+            print(nice_row)
+
+    grid[0][0] = 2
+    updateGrid()
+
+    index_y = 0
+    index_x = 0
+    while True:
+        x = sys.stdin.read(1)[0]
+
+        if x == 'h': # left
+            if grid[index_y][index_x] != 1:
+                grid[index_y][index_x] = 0
+            index_x -= 1
+            grid[index_y][index_x] = 2
+            call(['clear'])
+
+        if x == 'j': # down
+            if grid[index_y][index_x] != 1:
+                grid[index_y][index_x] = 0
+            index_y += 1
+            grid[index_y][index_x] = 2
+            call(['clear'])
+
+        if x == 'k': # up
+            if grid[index_y][index_x] != 1:
+                grid[index_y][index_x] = 0
+            index_y -= 1
+            grid[index_y][index_x] = 2
+            call(['clear'])
+
+        if x == 'l': # right
+            if grid[index_y][index_x] != 1:
+                grid[index_y][index_x] = 0
+            index_x += 1
+            grid[index_y][index_x] = 2
+            call(['clear'])
+
+        if x == 'i': # right
+            grid[index_y][index_x] = 1
+            call(['clear'])
+
+        if x == 's':
+            call(['clear'])
+            grid[index_y][index_x] = 0
+            break
+
+        updateGrid()
+
+# ENDFILE

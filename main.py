@@ -56,7 +56,7 @@ def printGrid(grid):
         nice_row = str_row.replace('0', '⬜').replace('1', '⬛')
         print(nice_row)
     if start == False:
-        input('Press enter')
+        input('Press enter to start')
         start = True
     sleep(0.1)
 
@@ -69,6 +69,7 @@ def pattern_arg(arg):
     elif arg == 'line'     : patterns.Line(grid)
     elif arg == 'bar'      : patterns.Bar(grid)
     elif arg == 'cross'    : patterns.Cross(grid)
+    elif arg == 'create'   : patterns.create(grid)
     else:
         print('Invalid pattern')
         exit()
