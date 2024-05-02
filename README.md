@@ -14,3 +14,7 @@ The current patterns are:
 + `bar`      - an horizontal 3x1 line in the center
 + `cross`    - a two diagonal lines forming a cross
 + `create`   - set a green cursor and blanck grid to create what you want: move with h,j,k,l draw with i 
+
+### TO FIX:
++ Cell alive touching border problem
++ Make it compatible with windows maybe (i don't really care)
