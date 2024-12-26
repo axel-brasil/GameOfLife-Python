@@ -17,4 +17,3 @@ The current patterns are:
 
 ### TO FIX:
 + Cell alive touching border problem
-+ Make it compatible with windows maybe (i don't really care)
